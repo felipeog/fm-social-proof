@@ -57,7 +57,6 @@ html {
   padding: 2rem;
   border-radius: $border-radius;
   background: $very-dark-magenta;
-  transition: $transition;
 
   &__header {
     display: flex;
@@ -157,7 +156,6 @@ html {
   .rating {
     display: flex;
     align-items: center;
-    background: $light-grayish-magenta;
     width: 80%;
     transition: $transition transform;
 
@@ -206,9 +204,6 @@ html {
   }
 
   .testimonial {
-    padding: 2rem;
-    border-radius: $border-radius;
-    background: $very-dark-magenta;
     transition: $transition transform;
 
     &:hover {
