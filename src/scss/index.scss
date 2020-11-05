@@ -6,3 +6,144 @@
 *::after {
   box-sizing: border-box;
 }
+
+html {
+  font-size: $font-size;
+  font-family: Spartan, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $very-dark-magenta;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.sections {
+  max-width: 1440px;
+  padding: 2rem;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    line-height: 1.4;
+    color: $dark-grayish-magenta;
+  }
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  background: $light-grayish-magenta;
+  width: 90%;
+  padding: 1.6rem;
+  border-radius: $border-radius;
+
+  &:nth-child(1) {
+    align-self: flex-start;
+  }
+
+  &:nth-child(2) {
+    align-self: center;
+  }
+
+  &:nth-child(3) {
+    align-self: flex-end;
+  }
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  &__stars {
+    margin-right: 2rem;
+  }
+
+  &__star + &__star {
+    margin-left: 0.6rem;
+  }
+
+  &__text {
+    font-weight: 700;
+  }
+}
+
+.bottom {
+  margin-top: 6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  align-items: start;
+}
+
+.testimonial {
+  padding: 2rem;
+  border-radius: $border-radius;
+  background: $very-dark-magenta;
+
+  &:nth-child(1) {
+    margin-top: 0;
+  }
+
+  &:nth-child(2) {
+    margin-top: 1rem;
+  }
+
+  &:nth-child(3) {
+    margin-top: 2rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__image {
+    margin-right: 1rem;
+    border-radius: 50%;
+    width: 3rem;
+  }
+
+  &__name {
+    color: $white;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  &__badge {
+    color: $dark-grayish-magenta;
+    font-size: 0.9rem;
+  }
+
+  &__text {
+    color: $light-grayish-magenta;
+    line-height: 1.4;
+  }
+}
