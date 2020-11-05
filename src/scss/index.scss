@@ -18,6 +18,8 @@ html {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: url(../img/bg-pattern-top-desktop.svg) top left no-repeat,
+    url(../img/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
 }
 
 .sections {
@@ -27,7 +29,7 @@ html {
 
 .top {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 0.45fr 0.55fr;
   grid-gap: 12rem;
 }
 
@@ -58,9 +60,14 @@ html {
   display: flex;
   align-items: center;
   background: $light-grayish-magenta;
-  width: 90%;
+  width: 80%;
   padding: 1.6rem;
   border-radius: $border-radius;
+  transition: $transition;
+
+  &:hover {
+    transform: scale($scale);
+  }
 
   &:nth-child(1) {
     align-self: flex-start;
@@ -106,6 +113,11 @@ html {
   padding: 2rem;
   border-radius: $border-radius;
   background: $very-dark-magenta;
+  transition: $transition;
+
+  &:hover {
+    transform: scale($scale);
+  }
 
   &:nth-child(1) {
     margin-top: 0;
