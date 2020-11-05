@@ -103,10 +103,10 @@ html {
     text-align: center;
     max-width: 30rem;
     margin: 0 auto;
-  }
 
-  .hero__title {
-    font-size: 2rem;
+    &__title {
+      font-size: 2rem;
+    }
   }
 
   .ratings {
@@ -118,15 +118,15 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .rating__text {
-    text-align: center;
-    line-height: 1.4;
-  }
+    &__text {
+      text-align: center;
+      line-height: 1.4;
+    }
 
-  .rating__stars {
-    margin-bottom: 1rem;
+    &__stars {
+      margin-bottom: 1rem;
+    }
   }
 
   .testimonials {
