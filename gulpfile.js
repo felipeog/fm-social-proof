@@ -14,7 +14,7 @@ var sass = require('gulp-sass')
 var uglify = require('gulp-uglify')
 
 // consts
-var buildDest = './build'
+var buildDir = './build'
 var srcDir = './src'
 
 var pugDir = `${srcDir}/pug/**/*.pug`
@@ -31,7 +31,7 @@ function buildHTML(cb) {
     .src(srcOptions)
     .pipe(pug())
     .pipe(htmlmin(htmlminOptions))
-    .pipe(gulp.dest(buildDest))
+    .pipe(gulp.dest(buildDir))
     .pipe(browserSync.stream())
 
   cb()
@@ -45,7 +45,7 @@ function buildCSS(cb) {
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('index.css'))
     .pipe(postcss(postcssPlugins))
-    .pipe(gulp.dest(`${buildDest}/css`, { sourcemaps: true }))
+    .pipe(gulp.dest(`${buildDir}/css`, { sourcemaps: true }))
     .pipe(browserSync.stream())
 
   cb()
@@ -61,7 +61,7 @@ function buildJS(cb) {
     .pipe(babel(babelOptions))
     .pipe(concat('index.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(`${buildDest}/js`, { sourcemaps: true }))
+    .pipe(gulp.dest(`${buildDir}/js`, { sourcemaps: true }))
     .pipe(browserSync.stream())
 
   cb()
@@ -71,7 +71,7 @@ function buildImage(cb) {
   gulp
     .src(imgDir)
     .pipe(imagemin())
-    .pipe(gulp.dest(`${buildDest}/img`))
+    .pipe(gulp.dest(`${buildDir}/img`))
     .pipe(browserSync.stream())
 
   cb()
@@ -80,7 +80,7 @@ function buildImage(cb) {
 // functions
 function start(cb) {
   var browserSyncOptions = {
-    server: buildDest,
+    server: buildDir,
   }
 
   browserSync.init(browserSyncOptions)
@@ -89,6 +89,7 @@ function start(cb) {
   gulp.watch(scssDir, buildCSS)
   gulp.watch(jsDir, buildJS)
   gulp.watch(imgDir, buildImage)
+
   gulp.watch([pugDir, scssDir, jsDir, imgDir]).on('change', browserSync.reload)
 
   cb()
