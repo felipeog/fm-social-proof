@@ -1,5 +1,10 @@
 mixin testimonial(imgSrc, name, text)
-  img(src=imgSrc)
-  p= name
-  p Verified Buyer
-  p= text
+  article.testimonial
+    header.testimonial__header
+      img(src=imgSrc)
+
+      .testimonial__meta
+        h2.testimonial__name= name
+        p.testimonial__badge Verified Buyer
+
+    p.testimonial__text= text
