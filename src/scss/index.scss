@@ -44,8 +44,12 @@ html {
   padding: 1.6rem;
   border-radius: $border-radius;
 
-  &__star + &__star {
-    margin-left: 0.6rem;
+  &__stars {
+    width: 6.2rem;
+    height: 1rem;
+    background-image: url(../img/icon-star.svg);
+    background-size: contain;
+    background-repeat: space;
   }
 
   &__text {
@@ -87,6 +91,7 @@ html {
   }
 }
 
+// mobile
 @media screen and (max-width: 1169px) {
   .sections {
     max-width: 768px;
@@ -135,16 +140,17 @@ html {
   }
 }
 
+// desktop
 @media screen and (min-width: 1170px) {
   .sections {
-    max-width: 1440px;
+    max-width: 1200px;
     padding: 2rem;
   }
 
   .top {
     display: grid;
     grid-template-columns: 0.45fr 0.55fr;
-    grid-gap: 6rem;
+    grid-gap: 4rem;
   }
 
   .ratings {
@@ -183,10 +189,6 @@ html {
       margin-right: 2rem;
     }
 
-    &__star + &__star {
-      margin-left: 0.6rem;
-    }
-
     &__text {
       font-weight: 700;
     }
@@ -221,11 +223,5 @@ html {
     &:nth-child(3) {
       margin-top: 2rem;
     }
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  .top {
-    grid-gap: 12rem;
   }
 }
